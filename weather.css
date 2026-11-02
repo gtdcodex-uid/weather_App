@@ -1,0 +1,524 @@
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ body{
+    width:100vw;
+    height: 170vh;
+    background-image: url(wImages/weather3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ transition: background-color 0.6s;
+}
+/* .btn-mode{
+   position: absolute;
+   top: 10px;
+   right:20px;
+   
+}
+.js-sun, .js-moon{
+   width:3vw;
+   height: 5vh;
+position: absolute;
+}
+.btn-mode-cont{
+   position: relative;
+   width:3vw;
+   height: 5vh;
+}
+#mode{
+   color: white;
+   font-size: 1.24rem;
+} */
+ .hidden {
+    display: none !important;
+}
+
+/* body.dark-mode {
+    background-image: url(wImages/weather-dark.jpeg) !important; /* or just use background-color: #0a0e27; */*/
+
+body.dark-mode .container {
+    background-color: rgba(10, 10, 25, 0.85) !important;
+}
+
+body.dark-mode .date {
+    background-color: rgba(5, 5, 15, 0.7) !important;
+    border-color: #555;
+}
+
+body.dark-mode input {
+    background-color: rgba(40, 40, 60, 0.6);
+    border-color: #666;
+}
+
+
+body.dark-mode p,
+body.dark-mode #temperature,
+body.dark-mode #day-week {
+    color: #e8e8e8 !important;
+}
+.btn-mode-cont {
+    position: relative;
+    width: 3vw;
+    height: 5vh;
+}
+.btn-mode{
+   position: absolute;
+   top:5px;
+   right:3vw;
+}
+
+.js-sun, .js-moon {
+    position: absolute;
+    width: 3vw;
+    height: 5vh;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#mode {
+    color: white;
+    font-size: 1.24rem;
+}
+
+/* This is the important part */
+.hidden {
+    display: none !important;
+}
+
+/* Dark mode changes */
+body.dark-mode {
+    background-image: none;
+    background-color: #0a0e27;
+}
+.container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width:75vw;
+   height: 85vh;
+   background-color:rgba(0,0,0,0.5);
+   border-radius: 20px;
+   gap:2em;
+}
+.date{
+   width:32vw;
+   border: 4px solid white;
+   height: 85vh;
+   background-color:rgba(0,0,0,0.35);
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap:1.5em;
+}
+#day-week{
+   font-size: 4.3rem;
+   text-align: center;color: white;
+   margin-bottom: 0.3em;
+}
+.day p{
+   font-size: 1.2rem;
+   text-align: center;
+   color: white;
+}
+#temperature{
+   font-size: 4rem;
+   color:white;
+   font-weight: 600;
+   position: relative;display: inline-block;text-align:center;
+}
+#circle{
+   font-size: 14px;
+   position: relative;
+   bottom: 35px;
+   
+}
+.w-icon{
+   height:25vh;
+   width:15vw;
+   object-fit: cover;
+   
+}
+#wth2{
+   color: yellow;
+   font-size: 4em;
+   position: absolute;
+   z-index: 2;right: 4.1vw;
+}
+#wth{
+   font-size: 7.5rem;
+   color: white;
+   position: absolute;
+   z-index: 4;right: 4.5vw;
+}
+.temp{
+   display: flex;
+   flex-direction: column;
+   align-items: center;justify-content: center;gap:1.5em;
+}
+.temp p{
+   font-size:2rem ;
+   color:white;
+}
+.loc{
+   width:41vw;
+   height: 85vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap:2.5em
+}
+.search{
+   display: flex;
+   align-items: center;
+   gap:1em
+}
+input{
+   height: 9vh;
+   width:26vw;
+   padding-left: 15px;font-size: 1.2em;
+   background-color: rgba(250,250,250,0.35);
+   border: 2px solid white;
+   border-radius: 10px;
+   word-spacing: 3px;
+   color: white;
+}
+input::placeholder{
+   color: white;
+}
+.search button{
+   height: 9vh;
+   border: 1px solid #48a2d6;
+   background-color: #48a2d6;
+   width:9vw;
+   border-radius: 10px;color:white;font-size: 1.2rem;
+}
+.location{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap:3em;
+}
+.location p{
+   font-size: 1.75rem;color: white;letter-spacing: 1px;
+}
+#sri{
+   font-size: 2.5rem;
+}
+#myLoc{
+   font-size: 3rem;color: rgb(156, 15, 15);margin-bottom: 10px;
+}
+.max{
+   display: flex;
+   width:34vw;
+   justify-content:space-between ;
+}
+.max-1, .min-1{
+   position: relative;
+   width:9vw;
+    height: 12vh;border-radius: 10px;padding: 25px 10px;
+   font-size: 1.3rem; color:white;margin-left: 10px;
+   
+}
+#circle2{
+   font-size: 10px;
+   margin-bottom: 17px;
+}
+.max-1{
+   background-color: #ffaa00;
+   border: 1px solid #ffaa00;
+}
+.min-1{
+   background-color: #4ea8de;
+   border: 1px solid #4ea8de;
+}
+.m-2{
+   color: white;
+   margin-top: 1em;
+   font-size: 1.2rem;text-align: center;
+}
+.others{
+   width:38vw;
+   display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.others p{
+   color:white;
+   font-size: 1.25rem;text-align: center;
+}
+.num{
+   font-size: 2.5rem !important;color:white;
+}
+#temp-ico{
+   color:white;
+   font-size: 1.75rem;text-align: center;
+   margin-left: auto;
+}
+.wind, .hum, .feel{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap:0.5em;
+}
+@media (min-width:481px) and (max-width:1034px){
+    body{
+      height: 140vh;
+      align-items: flex-start;
+      padding-top: 4em;
+      
+}
+.container{
+   width:85vw;
+   height: 60vh;
+   gap:1em;
+}
+.date{
+   width:37vw;
+   height: 60vh;
+   gap:2em;
+}
+#day-week{
+   font-size: 3.3rem;
+   margin-bottom: 0.3em;
+}
+.day p{
+   font-size: 1.1rem;
+}
+#temperature{
+   font-size: 3rem;
+   font-weight: 500;
+}
+#circle{
+   font-size: 12px;
+   bottom: 27px;
+   }
+.w-icon{
+   height:18vh;
+   width:25vw;
+   }
+#wth2{
+   color: yellow;
+   font-size: 3.5em;
+   right: 4.1vw;top:0.7em;
+}
+#wth{
+   font-size: 6.5rem;
+   top:0.4em;
+}
+.temp{
+   display: flex;
+   flex-direction: column;
+   align-items: center;justify-content: center;gap:1em;
+}
+.temp p{
+   font-size:2rem ;
+   color:white;
+}
+.loc{
+   width:48vw;
+   height: 60vh;
+   display: flex;
+   gap:2.2em;
+}
+input{
+   height: 5vh;
+   width:25vw;
+}
+.search button{
+   height: 5vh;
+   width:10vw;
+   border-radius: 10px;color:white;font-size: 1.1rem;
+}
+.location{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap:1em;
+}
+.location p{
+   font-size: 1.35rem;letter-spacing: 0;
+}
+#sri{
+   font-size: 1.6rem;
+}
+#myLoc{
+   font-size: 1.8rem;
+}
+.max{
+   display: flex;
+   width:40vw;
+}
+.max-1, .min-1{
+   position: relative;
+   width:12vw;
+    height: 6vh;border-radius: 10px;padding: 2vh 1vw; 
+   font-size: 1.1rem; color:white;margin-left: 10px;
+}
+#circle2{
+   font-size: 10px;
+   margin-bottom: 13px;
+}
+.max-1{
+   background-color: #ffaa00;
+}
+.min-1{
+   background-color: #4ea8de;
+}
+.m-2{
+   margin-top: 1em;
+   font-size: 1.1rem;text-align: center;
+}
+.others{
+   width:40vw;
+}
+.others p{
+   color:white;
+   font-size: 1.05rem;text-align: center;
+}
+.num{
+   font-size: 1.75rem !important;color:white;
+}
+#temp-ico{
+   color:white;
+   font-size: 1.25rem;text-align: center;
+}
+.wind, .hum, .feel{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap:0.5em;
+}}
+@media (max-width:480px){
+   body{
+    width:100vw;
+    height: 130vh;
+      align-items: flex-start;
+      padding-top: 5vh;
+
+}
+.container{
+   width:98vw;
+   height: 55vh;
+   gap:1em;
+}
+.date{
+   width:40vw;
+   border: 4px solid white;
+   height: 55vh;
+   gap:1.5em;
+}
+#day-week{
+   font-size: 1.8rem;
+}
+.day p{
+   font-size: 0.7rem;
+}
+#temperature{
+   font-size: 1.8rem;
+}
+#circle{
+   font-size: 8px;
+   bottom: 16px;
+   }
+.w-icon{
+   position: relative;
+   height:15vh;
+   width:20vw;
+   
+}
+#wth2{
+   color: yellow;
+   font-size: 1.7rem;
+   right: 2.8vw;
+   top:1.2em
+}
+#wth{
+   font-size: 4rem;
+   color: white;
+   right: 2vw;top:0.5em;
+}
+.temp{
+   display: flex;
+   flex-direction: column;
+   align-items: center;justify-content: center;gap:0.6em;
+}
+.temp p{
+   font-size:0.8rem ;
+   color:white;
+}
+.loc{
+   width:58vw;
+   height: 55vh;
+   gap:1.5em
+}
+.search{
+   gap:0.6em
+}
+input{
+   height: 4vh;
+   width:36vw;
+   padding-left: 15px;font-size: 0.8rem;
+}
+.search button{
+   height: 4vh;
+   width:14vw;
+font-size: 0.8rem;
+}
+.location{
+   gap:1em;
+}
+.location p{
+   font-size: 0.75rem;color: white;letter-spacing: 1px;
+}
+#sri{
+   font-size: 1rem;
+}
+#myLoc{
+   font-size: 1rem;color: rgb(156, 15, 15);margin-bottom: 10px;
+}
+.max{
+   display: flex;
+   width:43vw;
+}
+.max-1, .min-1{
+   position: relative;
+   width:17vw;
+    height: 6vh;border-radius: 10px;padding: 1vh 1vw; 
+   font-size: 0.7rem; margin-left: 0;
+}
+#circle2{
+   font-size: 4px;
+   margin-bottom: 7px;
+}
+
+.m-2{
+   font-size: 0.7rem;text-align: center;
+}
+.others{
+   width:47vw;
+}
+.others p{
+   color:white;
+   font-size: 0.8rem;text-align: center;
+}
+.num{
+   font-size: 1.2rem !important;color:white;
+}
+#temp-ico{
+   color:white;
+   font-size: 1rem;text-align: center;
+}
+}

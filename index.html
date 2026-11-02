@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+      <link rel="stylesheet" href="weather.css">
+    <script src="https://kit.fontawesome.com/948a053b49.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- <div class="btn-mode">
+    <div class="btn-mode-cont">
+ <button class="js-sun" onclick=""> <i class="fa-regular fa-sun" id="mode"></i></button>
+  <button class="js-moon" onclick=""> <i class="fa-solid fa-moon" id="mode"></i></button></button>
+  </div>
+  </div> -->
+  <div class="btn-mode">
+    <div class="btn-mode-cont">
+        <button class="js-sun hidden" onclick="setLightMode()">
+            <i class="fa-regular fa-sun mode-icon" id="mode"></i>
+        </button>
+        <button class="js-moon" onclick="setDarkMode()">
+            <i class="fa-solid fa-moon mode-icon" id="mode"></i>
+        </button>
+    </div>
+</div>
+<div class="container">
+  <div class="date">
+    <div class="day">
+      <p id="day-week">Thursday</p>
+      <p>2026 September 30</p>
+    </div>
+    <img class="w-icon">
+
+    
+    <div class="temp">
+      <p id="temperature">29°C</p>
+      <p id="weather-desc">Mostly Cloudy</p>
+    </div>
+  </div>
+  <div class="loc">
+     <div class="search">
+        <input type= 'text'placeholder="Search Location..." class="search-space">
+        <button id="search-btn">Search</button>
+     </div>
+     <div class="location">
+         <p id="city">Polonnaruwa, <span id="sri">Sri Lanka</span></p>
+         <span><i class="fa-solid fa-location-dot fa-lg" id="myLoc"></i></span>
+     </div>
+     <div class="max">
+        <div class="max-temp">
+         <p class="max-1">31°C</p>
+         <p class="m-2">Max temperature</p>
+        </div>
+        <div class="min-temp">
+         <p class="min-1">25°C</p>
+         <p class="m-2">Min temperature</p>
+        </div>
+     </div>
+     <div class="others">
+          <div class="feel">
+            <p class="num" id="feels-like">37</p>
+            <p>Feels like</p>
+            <span><i class="fa-solid fa-hand-sparkles" id="temp-ico"></i></span>
+          </div>
+          <div class="hum">
+            <p class="num" id="humidity">45%</p>
+            <p>Humidity</p>
+            <span><i class="fa-solid fa-droplet" id="temp-ico"></i></span>
+
+          </div>
+          <div class="wind">
+            <p class="num" id="wind-speed">5 m/s</p>
+            <p>Wind</p>
+            <span><i class="fa-solid fa-wind" id="temp-ico"></i></span>
+
+          </div>  
+ 
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="weather.js">
+
+</script>
+</body>
+</html>
